@@ -1,0 +1,18 @@
+[project]
+name = "bankrs-day31-hitl"
+version = "0.1.0"
+description = "Day31 LangGraph人类在环银行推荐流程作业"
+requires-python = ">=3.13"
+dependencies = [
+    "langgraph>=1.2.0,<2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.0,<10",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
