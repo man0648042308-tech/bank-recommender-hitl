@@ -1,8 +1,8 @@
-# Day31学习总结：LangGraph人类在环与子智能体
+# Day31技术总结：LangGraph人类在环与子智能体
 
 ## 一、今天解决的核心问题
 
-Day29～Day30的银行推荐系统能够生成产品推荐并保存状态，但金融业务不能在生成结果后立即执行。Day31增加Human-in-the-Loop（HITL，人类在环），让Graph在关键位置主动暂停，等待复核员和客户作出决定，再从原状态继续执行。
+项目～Day30的银行推荐系统能够生成产品推荐并保存状态，但金融业务不能在生成结果后立即执行。Day31增加Human-in-the-Loop（HITL，人类在环），让Graph在关键位置主动暂停，等待复核员和客户作出决定，再从原状态继续执行。
 
 完整流程是：客户画像分析 → 初步推荐 → 人工复核 → 客户确认 → 模拟执行。
 
@@ -28,11 +28,11 @@ Day29～Day30的银行推荐系统能够生成产品推荐并保存状态，但�
 
 ## 四、为什么需要Checkpointer和thread_id
 
-人工可能几分钟、几小时甚至几天后才回复，因此Graph必须保存中断前的状态。`MemorySaver`在本次教学中担任Checkpointer。
+人工可能几分钟、几小时甚至几天后才回复，因此Graph必须保存中断前的状态。`MemorySaver`在本次技术演示中担任Checkpointer。
 
 `thread_id`相当于流程编号。开始和恢复必须使用相同`thread_id`，Graph才能找到正确客户的正确检查点。使用不同ID会成为另一条独立流程，不能恢复原来的人工审核。
 
-本作业使用的`MemorySaver`只在当前Python进程的内存中保存数据，适合教学和测试；程序退出后不能保证状态仍存在。生产环境应使用PostgresSaver等持久化Checkpointer，因此不能把MemorySaver描述为真正的生产持久化。
+本项目使用的`MemorySaver`只在当前Python进程的内存中保存数据，适合技术演示和测试；程序退出后不能保证状态仍存在。生产环境应使用PostgresSaver等持久化Checkpointer，因此不能把MemorySaver描述为真正的生产持久化。
 
 ## 五、人工复核与客户确认的区别
 

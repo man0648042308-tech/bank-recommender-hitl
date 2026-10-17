@@ -1,13 +1,13 @@
-> 本仓库为个人作品集公开版：AI 大模型应用开发课程实战项目，模拟数据，非生产系统。更多项目见作品集主页。
+> 本仓库为个人作品集公开版：AI 大模型应用开发工程实践项目，模拟数据，非生产系统。更多项目见作品集主页。
 
-# Day31作业：LangGraph人类在环银行推荐流程
+# 项目：LangGraph人类在环银行推荐流程
 
-## 作业完成情况
+## 项目完成情况
 
 | 要求 | 对应文件 |
 |---|---|
-| Typora学习总结 | `Day31学习总结.md` |
-| 练习5完整银行推荐流程 | `bank_day31/full_bank_hitl.py` |
+| Typora技术总结 | `Day31学习总结.md` |
+| 示例5完整银行推荐流程 | `bank_day31/full_bank_hitl.py` |
 | 交互式人工复核与客户确认 | `bank_day31/interactive_demo.py` |
 | Checkpointer、interrupt、Command恢复 | `full_bank_hitl.py`及自动测试 |
 | VS Code/Codex子智能体附加题 | `subagent_evidence/VSCode_Codex子智能体实践.md` |
@@ -76,7 +76,7 @@ y
 
 程序显示“Graph已主动暂停”是HITL正常行为，不是异常。
 
-`MemorySaver`只在当前Python进程内保存状态，适合课程演示和测试，不是跨进程的生产持久化。生产环境应替换为PostgresSaver等持久化Checkpointer。
+`MemorySaver`只在当前Python进程内保存状态，适合功能演示和测试，不是跨进程的生产持久化。生产环境应替换为PostgresSaver等持久化Checkpointer。
 
 ## 单独运行
 

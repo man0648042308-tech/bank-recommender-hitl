@@ -1,4 +1,4 @@
-"""闭卷复现验收器；默认验证同目录hitl_starter.py。"""
+"""独立复现验收器；默认验证同目录hitl_starter.py。"""
 
 import importlib.util
 import sys
